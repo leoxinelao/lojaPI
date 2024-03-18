@@ -33,6 +33,8 @@
 </head>
 <body>
 
+<br><br>
+
 <div class = "box-search">
 <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
 <button onclick="searchData()" class="btn btn-primary">
@@ -71,6 +73,9 @@
                         echo "<td>".$user_data['email']."</td>";
                         echo "<td>".$user_data['grupo']."</td>";
                         echo "<td>".$user_data['situacao']."</td>";        
+                        echo "<td>                   
+
+                            </td>";
                         echo "<td>
                         <a class='btn btn-sm btn-primary' href='edit.php?id=$user_data[id]' title='Editar'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>
@@ -100,4 +105,5 @@
         window.location = 'listarUsuario.php?search='+search.value;
     }
 </script>
+
 </html>

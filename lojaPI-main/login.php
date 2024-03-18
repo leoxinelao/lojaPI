@@ -16,7 +16,7 @@ session_start();
         <h1>Faça login<br>E entre no nosso time</h1>
         <img src="../pantarma.svg" class="left-login-image" alt="">
     </div>
-    <form action="testLogin.php" method="POST">
+    <form action="testes/testLogin.php" method="POST">
   <div class = "right-login">
 <div class = "card-login">
     <h1>LOGIN</h1>

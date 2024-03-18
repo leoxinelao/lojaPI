@@ -24,12 +24,12 @@ session_start();
         }
         else
         {
-            header('Location: sistema.php');
+            header('Location: listarUsuario.php');
         }
     }
     else
     {
-        header('Location: sistema.php');
+        header('Location: listarUsuario.php');
     }
     
 ?>
@@ -46,7 +46,7 @@ session_start();
 <body>
     <a href="listarUsuario.php">Voltar</a>
     <div class="box">
-        <form action="saveEdit.php" method="POST">
+        <form action="testes/saveEdit.php" method="POST">
             <fieldset>
                 <legend><b>Cadastro</b></legend>
                 <br>
