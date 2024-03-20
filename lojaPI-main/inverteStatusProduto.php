@@ -4,7 +4,7 @@
     if ($_SESSION['grupo'] !== 'Administrador') {
 
         $_SESSION['msg'] = "<div class='alert alert-danger'>Você não tem permissão para inativar ou ativar um produto!!</div>";
-        header("Location: listarUsuario.php");
+        header("Location: listarProduto.php");
         exit();
     }
 
@@ -15,7 +15,7 @@
         //Coloca o id em uma variavel
         $id = $_GET['id'];
         //Pega os dados do banco de dados
-        $sqlSelect = "SELECT situacao FROM usuarios WHERE id=$id";
+        $sqlSelect = "SELECT situacao FROM produto WHERE id=$id";
         //Colocando os dados na variavel
         $result = $conexao->query($sqlSelect);
 
@@ -33,21 +33,21 @@
                 $situacao = 'Ativo';
             }
 
-            $sqlInsert = "UPDATE usuarios SET situacao='$situacao' WHERE id=$id";
+            $sqlInsert = "UPDATE produto SET situacao='$situacao' WHERE id=$id";
 
             $result = $conexao->query($sqlInsert);
 
             print_r($result);
-            header('Location: listarUsuario.php');
+            header('Location: listarProduto.php');
         }
         else
         {
-            header('Location: listarUsuario.php');
+            header('Location: listarProduto.php');
         }
     }
     else
     {
-        header('Location: listarUsuario.php');
+        header('Location: listarProduto.php');
     }
 
 

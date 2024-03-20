@@ -5,7 +5,7 @@ session_start();
         //Coloca o id em uma variavel
         $id = $_GET['id'];
         //Pega os dados do banco de dados
-        $sqlSelect = "SELECT * FROM usuarios WHERE id=$id";
+        $sqlSelect = "SELECT * FROM produto WHERE id=$id";
         //Colocando os dados na variavel
         $result = $conexao->query($sqlSelect);
 
@@ -17,21 +17,22 @@ session_start();
             while($user_data = mysqli_fetch_assoc($result))
             {
                 $nome = $user_data['nome'];           
-                $cpf = $user_data['cpf'];
-                $grupo = $user_data['grupo'];
-                $senha = $user_data['senha'];
+                $avaliacao = $user_data['avaliacao'];
+                $descricao = $user_data['descricao'];
+                $preco = $user_data['preco'];
+                $quantidade = $user_data['quantidade'];
             }
         }
         else
         {
-            header('Location: listarUsuario.php');
+            header('Location: listarProduto.php');
         }
     }
     else
     {
-        header('Location: listarUsuario.php');
+        header('Location: listarProduto.php');
     }
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -44,11 +45,11 @@ session_start();
     <title>Cadastro</title>
 </head>
 <body>
-    <a href="listarUsuario.php">Voltar</a>
+    <a href="listarProduto.php">Voltar</a>
     <div class="box">
-        <form action="saveEdit.php" method="POST">
+        <form action="saveEditProduto.php" method="POST">
             <fieldset>
-                <legend><b>Cadastro</b></legend>
+                <legend><b>Editar Produto</b></legend>
                 <br>
                 <div class="inputBox">    
                     <input type="text" name="nome" class="inputUser" value="<?php echo $nome;?>" required>
@@ -56,27 +57,24 @@ session_start();
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="cpf" class="inputUser" value="<?php echo $cpf;?>" required>
-                    <label for="cpf" class="labelInput">CPF</label>
-                </div>
-                <br><br>
-                <p>Grupo:</p>
-                <input type="radio" id="administrador"name="grupo" value="Administrador" <?php echo ($grupo == 'Administrador') ? 'checked' : '';?> required>
-                <label for="administrador">Administrador</label>
-                <br>
-                <input type="radio" id="estoquista"name="grupo" value="Estoquista" <?php echo ($grupo == 'Estoquista') ? 'checked' : '';?> required>
-                <label for="estoquista">Estoquista</label>
-                <br><br>
-                <br><br>
-                <div class="inputBox">
-                    <input type="password" name="senha" class="inputUser" value="<?php echo $senha;?>" required>
-                    <label for="senha"class="labelInput">Senha</label>
+                    <input type="number" name="avaliacao" class="inputUser" value="<?php echo $avaliacao;?>" required>
+                    <label for="avaliacao" class="labelInput">Avaliação</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="senha2" class="inputUser" value="<?php echo $senha;?>" required>
-                    <label for="senha2"class="labelInput">Confirmar Senha</label>
+                    <input type="text" name="descricao" class="inputUser" value="<?php echo $descricao;?>" required>
+                    <label for="descricao"class="labelInput">Descrição</label>
                 </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="number" name="preco" class="inputUser" value="<?php echo $preco;?>" required>
+                    <label for="preco"class="labelInput">Preço</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="number" name="quantidade" class="inputUser" value="<?php echo $quantidade;?>" required>
+                    <label for="quantidade"class="labelInput">Quantidade</label>
+                </div>  
                 <br><br>
                 <input type="hidden" name="id" value=<?php echo $id;?>>
                 <input type="submit" name="update" id="update">

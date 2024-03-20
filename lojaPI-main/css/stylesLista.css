@@ -33,3 +33,22 @@ body{
 .text-primary{
     color: rgb(80, 13, 88) !important;
 }
+.custom-btn{
+    padding-top: 1px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    color:rgb(255, 255, 255);
+    background: rgb(22, 121, 146);
+    cursor: pointer;
+}
+.btn-voltar {
+
+    padding: 20px;
+    background-color: #007bff; /* Cor de fundo desejada */
+    color: #fff; /* Cor do texto */
+    border-radius: 5px; /* Borda arredondada */
+}
+.btn-voltar:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}

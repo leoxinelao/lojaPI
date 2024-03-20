@@ -1,52 +1,32 @@
 <?php
-session_start();
     if(isset($_POST['submit'])){
         include_once('config.php');
 
+        print_r($_POST['nome']);
+        print_r($_POST['cpf']);
+        print_r($_POST['email']);
+        print_r($_POST['grupo']);
+        print_r($_POST['senha']);
 
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $cpf = $_POST['cpf'];
+        $grupo = $_POST['grupo'];
+        $senha = $_POST['senha'];
 
-        if(!empty($_POST['senha']) && !empty($_POST['senha2'])) {
-            // Obtém os valores dos campos
-            $senha = $_POST['senha'];
-            $senha2 = $_POST['senha2'];
-            
-            // Verifica se as senhas são diferentes
-            if($senha !== $senha2) {
-                // Define uma mensagem de erro
-                $_SESSION['msg'] = "<div class='alert alert-danger'>As senhas não coincidem!</div>";
-    
-                // Redireciona de volta para o formulário
-                header('Location: formulario.php');
-                exit(); // Certifique-se de sair após redirecionar
-            } else {
-                $_SESSION['msg'] = "<div class='alerta'>Cadastro realizado com sucesso!</div>";
-                $nome = $_POST['nome'];
-                $email = $_POST['email'];
-                $cpf = $_POST['cpf'];
-                $grupo = $_POST['grupo'];
-                $situacao = 'Ativo';
-        
-                $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,cpf,grupo,senha,situacao) VALUES ('$nome','$email','$cpf','$grupo','$senha','$situacao')");
-                header('Location: formulario.php');
-                exit(); // Certifique-se de sair após redirecionar
-            }
-        }
-       
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,cpf,grupo,senha) VALUES ('$nome','$email','$cpf','$grupo','$senha')");
     }
-    
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <link rel="stylesheet" type="text/css" href="css/stylesCadastro.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 </head>
 <body>
-    <a href="principal.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
@@ -68,10 +48,10 @@ session_start();
                 </div>
                 <br><br>
                 <p>Grupo:</p>
-                <input type="radio" id="administrador"name="grupo" value="Administrador" required>
+                <input type="radio" id="administrador"name="grupo" value="administrador" required>
                 <label for="administrador">Administrador</label>
                 <br>
-                <input type="radio" id="estoquista"name="grupo" value="Estoquista" required>
+                <input type="radio" id="estoquista"name="grupo" value="estoquista" required>
                 <label for="estoquista">Estoquista</label>
                 <br><br>
                 <br><br>
@@ -86,13 +66,6 @@ session_start();
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">
-                <br><br>
-                <?php
-					if(isset($_SESSION['msg'])){
-						echo $_SESSION['msg'];
-						unset($_SESSION['msg']);
-					}					
-				?>
             </fieldset>
         </form>
     </div>

@@ -1,6 +1,6 @@
 <?php
 
-    include_once('config.php');
+    include_once('banco.php');
 
     if(isset($_POST['update'])){
 
@@ -10,12 +10,13 @@
     $grupo = $_POST['grupo'];
     $senha = $_POST['senha'];
     
-    $sqlInsert = "UPDATE usuarios SET nome='$nome',senha='$senha',cpf='$cpf',grupo='$grupo',senha='$senha' WHERE id=$id";
+    $sqlInsert = "UPDATE usuarios SET nome='$nome',cpf='$cpf',grupo='$grupo',senha='$senha' WHERE id=$id";
 
     $result = $conexao->query($sqlInsert);
 
     print_r($result);
+    header('Location: listarUsuario.php');
 }
-header('Location: principal.php');
+header('Location: listarUsuario.php');
 
 ?>
