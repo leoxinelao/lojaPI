@@ -1,0 +1,174 @@
+body{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(177, 226, 255) 6%, rgb(160, 205, 231) 37%, rgb(214, 228, 233) 67%, rgb(187, 187, 187) 100%);
+    color: black;
+}
+*{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+header{
+display: flex;
+flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 85%;
+}
+
+.left-side-menu{
+display: flex;
+gap: 50px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a{
+text-decoration: none;
+color: rgb(16, 255, 223);
+}
+.right-side-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.icon-avatar img{
+width: 40px;
+
+}
+
+.line{
+    height: 1px;
+    background-color:wheat ;
+    width: 90%;
+    align-self: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 85px);
+    gap:150px;
+}
+.left-side{
+    width: 1500px;
+    display: flex;
+    margin-left: -200px;
+    flex-direction: column;
+}
+.items{
+    align-self: flex-end;
+}
+.select-image{
+    max-width: 400px;
+}
+.select-image img{
+    max-width: 150%;
+    border-radius: 10px;
+}
+.thumbnails{
+    display: flex;
+    max-width: 400px;
+}
+.thumbnail img{
+    width: 100%;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 10px;
+}
+.right-side{
+    margin-top: -100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+.right-side p{
+    color: black;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+.price{
+    font-size: 24px;
+    font-weight: 700;
+    color:black;    
+}
+.off{
+    font-size: 12px;
+    color: rgb(38, 39, 39);
+}
+.options{
+    display: flex;
+    gap: 20px;
+}
+.amount{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: aquamarine;
+    width: fit-content;
+    border-radius: 10px;
+    color: black;
+}
+
+.amount span{
+    font-weight: 700;
+    font-size: 12px;
+}
+.minus, .plus{
+    cursor:pointer;
+}
+.button{
+    display: inline-block;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: rgb(232, 178, 78);
+    padding: 10px 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.button img{
+    width: 14px;
+}
+h4, h3,p{
+    color: black;
+    font-size: 24px;
+}
+span{
+    font-size: 24px;
+}
+.texto{
+    font-size: 40px;
+    padding-bottom: 90px;
+}
+.bota{
+    color: white;
+    background-color: black;
+
+    padding: 10px;
+}

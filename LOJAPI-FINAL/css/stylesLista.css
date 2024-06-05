@@ -1,0 +1,54 @@
+body{
+    background: linear-gradient(to right, rgb(72, 9, 90), rgb(17, 54, 71));
+    color: white;
+    text-align: center;
+}
+.table-bg{
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px 15px 0 0;
+}
+
+.box-search{
+    display: flex;
+    justify-content: center;
+    gap: .1%;
+}
+.page-item{
+    color: brown;
+}
+.page-link{
+    color: brown;
+}
+.pagination{
+    color: brown;
+}
+.bg-primary .active {
+    border-color: #ff0000 !important;
+}
+
+.bg-primary{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    
+}
+.text-primary{
+    color: rgb(80, 13, 88) !important;
+}
+.custom-btn{
+    padding-top: 1px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    color:rgb(255, 255, 255);
+    background: rgb(22, 121, 146);
+    cursor: pointer;
+}
+.btn-voltar {
+
+    padding: 20px;
+    background-color: #007bff; 
+    color: #fff; 
+    border-radius: 5px; 
+}
+.btn-voltar:hover {
+    background-color: #0056b3; 
+}
